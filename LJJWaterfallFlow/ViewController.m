@@ -29,6 +29,19 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self hideKeyBoard];
+}
+- (void)hideKeyBoard {
+    [self.rowSpace resignFirstResponder];
+    [self.columnSpace resignFirstResponder];
+    [self.columnCount resignFirstResponder];
+    [self.top resignFirstResponder];
+    [self.left resignFirstResponder];
+    [self.bottom resignFirstResponder];
+    [self.right resignFirstResponder];
+}
+
 - (IBAction)startButtonClick:(id)sender {
     [self start];
 }
